@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+:root {
+  --color-background: #FFFBEF;
+  --color-sidebar: #DDEBC7;
+  --color-top-panel: #FEDCAC;
+  --color-main: #C6DEE8;
+  --color-text: #333; /* Default text color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  display: flex;
+  height: 100vh; /* Full height of viewport */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar {
+  width: 250px;
+  background-color: var(--color-sidebar);
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sidebar .profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #FFF;
+  margin-bottom: 20px;
+  border: 2px solid var(--color-text);
+}
+
+.sidebar button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: var(--color-main);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: darken(var(--color-main), 10%);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-panel {
+  height: 150px; /* Adjust height as needed */
+  background-color: var(--color-top-panel);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
